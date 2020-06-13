@@ -1,0 +1,218 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+
+/* ------  Configurações universais ------ */
+
+* { box-sizing: border-box; }
+
+body {
+	font-family: Montserrat, Monospace, Helvetica, Verdana, sans-serif;
+	font-size: 100%;
+	padding: 0; margin: 0;
+}
+
+/* ------ Config. Básicas, Header e seção abaixo do Header ------ */
+
+header, footer, main, #secao-imagem {
+	padding: 20px 10px;
+	background-color: #fff06e;
+}
+
+header h1, header p {
+	display: inline-block;
+	margin: 0; padding: 10px;
+	font-size: 1.25rem; font-weight: 100;
+}
+
+header p {
+	font-size: 0.95rem; 
+	margin-left: 10px;
+}
+
+#secao-imagem {
+	padding: 0px;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0,.5), rgb(0, 0, 0,.8)), 
+	url('https://cdn-cms.f-static.net/uploads/651267/2000_crop_5ae79b48ecd58_5a3a2f29728e7.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 480px;
+}
+
+#sc-img-container {
+	position: relative;
+	height: 100%; width: 60%;
+	margin: 0 auto; padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#sc-img-container > h2, #btn-img { 
+	margin: 20px 0 0 0;
+	color: #f1f1f1;
+	font-family: 'Titillium Web';
+	font-size: 3rem;
+	text-decoration: underline;
+	text-align: center;
+}
+
+#sc-img-container > p {
+	color: #f9f9f9; font-size: 20px;
+	text-align: center;
+}
+
+#btn-img {
+	text-decoration: none; font-size: 1.25rem; 
+	color: #fff06e; padding: 10px 40px;
+	background-color: transparent;
+	border: 2px solid #fff06e;
+	box-shadow: 4px 4px;
+	outline: none;
+}
+
+#btn-img:hover {
+	cursor: pointer; border-color: #f1f1f1;
+	background-color: transparent;
+	transition: ease-in-out .5s;
+	box-shadow: 2px 2px #f1f1f1;
+}
+
+#arrow-bottom {
+	position:  relative;
+	display: inline-block;
+	margin-left: 15px;
+	height: 15px; width: 15px;
+	transform: rotate(45deg);
+	border-right: 2px solid; 
+	border-bottom: 2px solid;
+	top: -3px;
+}
+
+/* ------ Main e config. básicas de suas seções ------ */
+
+main { 
+	padding: 10px !important; min-height: 100vh; 
+	display: flex; justify-content: center;
+	background-color: #f9f9f9; 
+}
+main > section {
+	flex: 1; max-width: 640px;
+	padding: 10px; background-color: #f9f9f9;
+	border: 2px solid;
+}
+main > section:nth-child(even) {
+	margin: 0 10px; 
+	max-width: calc(640px * 2);
+	flex: 2;
+}
+
+main > section > h2 {
+	padding: 20px; margin: 0;
+	background-color: #fff06e;
+	border-left: 2px solid;
+}
+
+/* --> Listas de linguagens de Program. e de Cursos dentro de Main... */
+
+.lista-lings, .lista-cursos {
+	list-style-type: none;
+	padding-inline-start: 0;
+	display: flex; flex-direction: column;
+}
+
+.lista-lings .item, .lista-cursos .item-cursos {
+	padding: 10px;
+	background-color: #f9f9f9;
+	border: 2px solid;
+}
+
+.lista-lings .item:nth-child(even), .lista-cursos .item-cursos:nth-child(even) {
+	margin: 10px 0;
+}
+
+.tipo-ling-front, .tipo-ling-bk, .tipo-ling-ux {
+	padding: 5px; 
+	font-size: 14px;
+	background-color: #6fbcdf;
+	width: 115px; color: #f9f9f9;
+}
+
+.tipo-ling-bk { background-color: #fc6464; }
+.tipo-ling-ux { background-color: #f7c769; }
+
+.nome-ling { margin-top: 0px; }
+.style-ling { width: 70%; }
+
+
+/* --> Lista de Idiomas dentro do Main... */
+
+main > section:nth-child(2) > span {
+	width: 100%; height: 2px;
+	background-color: #000;
+	margin: 20px 0;
+	display: block;
+}
+
+.area-idioma {
+	border: 2px solid;
+	margin: 10px 0; padding: 20px 10px;
+	outline: 2px solid #FFC107;
+}
+
+.nm-idioma::before {
+	position: relative;
+    top: 2px; display: inline-block;
+    content: ''; margin-right: 5px;
+    width: 25px; height: 16px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/US_flag_large_51_stars.png/800px-US_flag_large_51_stars.png');
+    background-size: cover;
+}
+
+.lang-knowledge { margin-left: 10px; }
+
+
+/* --> Lista de Cursos dentro de Main... */
+
+.lista-cursos > .item-cursos > .nome-curso {
+	background-color: #f2f2f2;
+    padding: 5px; margin-top: 0;
+    border-left: 2px solid #000;
+}
+
+/* ------ Footer ------ */
+
+#p_copyright {
+	text-align: center;
+}
+
+
+/* ------ MediaQueries ------ */
+
+@media (max-width: 900px) {
+	#sc-img-container { width: 80%; }
+	main { flex-direction: column; }
+	main > section {
+		max-width: none; 
+	}
+	main > section:nth-child(even) {
+		max-width: none;
+		margin: 10px 0;
+	}
+	.lang-knowledge{ margin-left: 0; }
+}
+
+@media (max-width: 400px) {
+	#sc-img-container { width: 90%; }
+	#sc-img-container > h2 { font-size: 2.5rem; }
+	main { flex-direction: column; }
+	main > section { max-width: none; }
+	main > section { margin: 10px 0 !important; }
+	main > section:first-child { margin: 0 !important; }
+	.lista-lings { flex-direction: row; overflow-x: auto; }
+	.lista-lings .item { min-width: 200px; }
+	.lista-lings .item:nth-child(even) { margin: 0 20px; }
+	.lista-lings .item:first-child { margin-left: 20px; }
+	.style-ling { width: 90%; }
+	main > section:last-child { margin: 0 !important; }
+}
